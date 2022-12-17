@@ -3,24 +3,10 @@ import GoogleMapReact from 'google-map-react'
 import './map.css'
 
 
-import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
 
 import { BsFillCircleFill } from "react-icons/bs";
 
 
-// function renderMarkers(map, maps, locations) {
-
-//   locations.map((location)=>{
-//     new maps.Marker({
-//       position: { lat: location.lat, lng: location.lng },
-//       map,
-//       title: location.address
-//     })
-
-//   })
- 
-// }
 
 const HeatMap = ({ locations, zoomLevel }) => (
   <div className="map">
@@ -31,7 +17,6 @@ const HeatMap = ({ locations, zoomLevel }) => (
         bootstrapURLKeys={{ key: 'AIzaSyDhyEj3tv8G7rsKB7bkBYA57u7AZ4qlXM8' }}
         defaultCenter={locations[0]}
         defaultZoom={zoomLevel}
-        // onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps, locations)}
       >
         
         {

@@ -31,35 +31,13 @@ const Map = ({ locations, zoomLevel }) => (
         defaultCenter={locations[0]}
         defaultZoom={zoomLevel}
 
-        onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps, locations)}
-        
+        onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps, locations)} 
       >
-        
-
-        
-        {/* {
-          locations.map((location)=> {return(<LocationPin
-            lat={location.lat}
-            lng={location.lng}                          //////////////USELESSSSSSSSSSSSSSS
-            text={location.address}
-          />)})
-        } */}
-
-
-        
-
+             
       </GoogleMapReact>
     </div>
   </div>
 )
-
-// const LocationPin = ({ text }) => (
-//   <div className="pin">
-//     <Icon icon={locationIcon} className="pin-icon" />           ////SHITTY OLD LOCATION PIN USELESS, WASTE
-//     <p className="pin-text">{text}</p>
-//   </div>
-// )
-
 
 
 export default Map

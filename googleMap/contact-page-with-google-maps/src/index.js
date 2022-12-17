@@ -29,7 +29,6 @@ get(child(dbRef, "/users")).then((snapshot) => {
   )
 })
 
-
 function convertLocationData(badAswarthData){
   var goodData = []
   for (var i in badAswarthData){
