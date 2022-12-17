@@ -19,7 +19,9 @@
   }
   
   .pin-icon {
-    font-size: 2rem;
+    font-size: 4rem;
+    opacity: 60%;
+    color: rgba(255, 140, 0, 0.808);
   }
   
   .pin-text {
