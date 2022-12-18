@@ -1,0 +1,98 @@
+import React from 'react'
+import { useState } from 'react'
+import IntroSection from './components/intro/Intro'
+import ContactSection from './components/contact-section/ContactSection'
+import DisclaimerSection from './components/disclaimer/Disclaimer'
+import FooterSection from './components/footer/Footer'
+import MapSection from './components/map/Map' // import the map here
+import HeatMap from './components/map/HeatMap'
+
+// import Firebase from 'firebase'
+
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js'
+
+import {get, ref, getDatabase, child} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB9eIkzpFj2DwOvFn529jHl1H5RWGdOJzQ",
+  authDomain: "potholes-cde20.firebaseapp.com",
+  databaseURL: "https://potholes-cde20-default-rtdb.firebaseio.com",
+  projectId: "potholes-cde20",
+  storageBucket: "potholes-cde20.appspot.com",
+  messagingSenderId: "97717487459",
+  appId: "1:97717487459:web:4e8c2c5b130bef01c53556"
+};
+
+// var locations = [{
+//   address: 'JYOTIIIII',
+//   lat: 12.42216,
+//   lng: 77.08427,
+// },
+// {
+//   address: 'afa',
+//   lat: 12.42216,
+//   lng: 77.08627}]
+
+
+// import './App.css'
+
+function App() {
+  const fb = initializeApp(firebaseConfig);
+  const dbRef = ref(getDatabase())
+  const [locations,setLocation]=useState([])
+  const handleClick=async()=>{
+    const data= await getData()
+    console.log(data)
+    console.log(locations)
+    for(var loc in data){
+      console.log("hello")
+      console.log(data[loc])
+      setLocation(...locations,data[loc])
+    }
+
+    console.log(locations)
+  }
+  async function getData(){
+    const snapshot=await get(child(dbRef, "/users"))
+    const response=convertLocationData(snapshot.val())
+    // console.log(response)
+    return response
+  }
+  // get(child(dbRef, "/users")).then((snapshot) => {
+  //   console.log(snapshot.val())
+  //   console.log(convertLocationData(snapshot.val()))
+  // })
+
+  return (
+    <div className="App">
+      <button onClick={handleClick}>Click me</button> 
+      <IntroSection />
+      <ContactSection />
+      <DisclaimerSection />
+      <FooterSection />
+      <MapSection locations={locations} zoomLevel={17}/>
+      
+      <HeatMap locations={locations} zoomLevel={17}/>
+       
+
+    </div>
+  )}
+
+
+function convertLocationData(badAswarthData){
+  var goodData = []
+  for (var i in badAswarthData){
+    badAswarthData[i].split(",")
+    goodData[goodData.length] = {
+      address: '',
+      lat: parseFloat(badAswarthData[i].split(",")[0]),
+      lng: parseFloat(badAswarthData[i].split(",")[1]),
+    }
+  }
+  return goodData;
+}
+
+
+export default App
+
+
