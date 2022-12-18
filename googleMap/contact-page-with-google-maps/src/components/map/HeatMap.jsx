@@ -10,7 +10,7 @@ import { BsFillCircleFill } from "react-icons/bs";
 
 const HeatMap = ({ locations, zoomLevel }) => (
   <div className="map">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+    <h2 className="map-h2">Pothole Density</h2>
 
     <div className="google-map">
       <GoogleMapReact
@@ -18,7 +18,6 @@ const HeatMap = ({ locations, zoomLevel }) => (
         defaultCenter={locations[0]}
         defaultZoom={zoomLevel}
       >
-        
         {
           locations.map((location)=> {return(<LocationPin
             lat={location.lat}

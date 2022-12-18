@@ -12,11 +12,12 @@ function App({locations}) {
   return (
     <div className="App">
       <IntroSection />
-      <ContactSection />
-      <DisclaimerSection />
-      <FooterSection />
       <MapSection locations={locations} zoomLevel={17}/>
       <HeatMap locations={locations} zoomLevel={17}/> 
+      {/* <ContactSection /> */}
+      {/* <DisclaimerSection /> */}
+      {/* <FooterSection /> */}
+      
     </div>
   )}
 

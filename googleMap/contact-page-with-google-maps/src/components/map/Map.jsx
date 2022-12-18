@@ -23,7 +23,7 @@ function renderMarkers(map, maps, locations) {
 
 const Map = ({ locations, zoomLevel }) => (
   <div className="map">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+    <h2 className="map-h2">Pothole Locations</h2>
 
     <div className="google-map">
       <GoogleMapReact

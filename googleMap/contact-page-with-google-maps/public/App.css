@@ -1,0 +1,81 @@
+html, App,body, root{
+  background-color: #FF597B;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.intro-container{
+  background-color: #181D31;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+.intro-h2{
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  font-size: 4rem;
+  width: 100%;
+}
+.google-map > div{
+  border-radius: 10px;
+  
+}
+
+.intro-p{
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+
+.map-h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 20px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.google-map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 60vh;
+  padding: 40px;
+}
+
+.pin {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  color: var(--main-blue);
+}
+
+.pin-icon {
+  font-size: 4rem;
+  opacity: 60%;
+  color: rgba(255, 140, 0, 0.808);
+}
+
+.pin-text {
+  font-size: 1.3em;
+}
+
+
+@media screen and (min-width: 799px) {
+  .google-map {
+    height: 80vh;
+  }
+
+  .map-h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  
+}
